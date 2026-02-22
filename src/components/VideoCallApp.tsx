@@ -469,7 +469,7 @@ const VideoTile = ({
               marginTop: 12,
             }}
           >
-            Camera off
+            Нет изображения
           </p>
         </div>
       )}
@@ -1098,7 +1098,7 @@ export default function VideoCallApp({
                 letterSpacing: -1,
               }}
             >
-              Konek
+              Портал звонки
             </h1>
             <p
               style={{
@@ -1107,7 +1107,7 @@ export default function VideoCallApp({
                 margin: 0,
               }}
             >
-              Crystal-clear video calls, instantly.
+              Звонки и чат в реальном времени.
             </p>
           </div>
 
@@ -1125,7 +1125,7 @@ export default function VideoCallApp({
             <div style={{ display: "flex", flexDirection: "column", gap: 14 }}>
               <input
                 type="text"
-                placeholder="Room name"
+                placeholder="Название встречи"
                 value={roomName}
                 onChange={(e) => setRoomName(e.target.value)}
                 onKeyDown={(e) => {
@@ -1152,7 +1152,7 @@ export default function VideoCallApp({
               />
               <input
                 type="text"
-                placeholder="Your name"
+                placeholder="Имя"
                 value={participantName}
                 onChange={(e) => setParticipantName(e.target.value)}
                 onKeyDown={(e) => {
@@ -1220,12 +1220,12 @@ export default function VideoCallApp({
                         animation: "spin 0.7s linear infinite",
                       }}
                     />
-                    Connecting…
+                    Подключение…
                   </>
                 ) : (
                   <>
                     <Video size={18} />
-                    Join Room
+                    Присоединиться к вызову
                   </>
                 )}
               </button>
@@ -1250,7 +1250,7 @@ export default function VideoCallApp({
                   }}
                 >
                   <Copy size={14} />
-                  Copy invite link
+                  Скопировать ссылку
                 </button>
               )}
             </div>
@@ -1426,7 +1426,7 @@ export default function VideoCallApp({
             }}
           >
             <Copy size={13} />
-            Invite
+            Пригласить
           </button>
           <button
             onClick={leaveRoom}
@@ -1446,7 +1446,7 @@ export default function VideoCallApp({
             }}
           >
             <PhoneOff size={13} />
-            Leave
+            Выйти
           </button>
         </div>
       </div>
