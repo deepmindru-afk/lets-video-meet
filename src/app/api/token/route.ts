@@ -1,5 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { AccessToken } from "livekit-server-sdk";
+import { RoomConfiguration } from '@livekit/protocol';
+
 
 export async function POST(req: NextRequest) {
   try {
@@ -57,6 +59,14 @@ export async function POST(req: NextRequest) {
       canSubscribe: true,
     });
 
+    const AGENT_NAME = process.env.AGENT_NAME;
+
+    if (AGENT_NAME) {
+      at.roomConfig = new RoomConfiguration({
+        agents: [{ AGENT_NAME }],
+      });
+    }
+    
     const token = await at.toJwt();
     console.log("Generated token:", token);
     return NextResponse.json({ token });
