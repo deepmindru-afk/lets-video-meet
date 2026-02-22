@@ -60,7 +60,9 @@ export async function POST(req: NextRequest) {
     });
 
     const AGENT_NAME = process.env.AGENT_NAME;
-
+    if (AGENT_NAME === undefined) {
+      const AGENT_NAME = 'portal';
+    }
     if (AGENT_NAME) {
       at.roomConfig = new RoomConfiguration({
         agents: [{ AGENT_NAME }],
