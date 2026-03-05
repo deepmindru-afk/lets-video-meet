@@ -761,7 +761,7 @@ export default function VideoCallApp({
     (payload: Uint8Array, participant?: RemoteParticipant) => {
       try {
         const msg = JSON.parse(new TextDecoder().decode(payload));
-        if (msg.type === "lk.chat") {
+        if (msg.type === "lk-chat-topic") {
           const newMsg: ChatMessage = {
             id: `${Date.now()}-${Math.random()}`,
             message: msg.text,
@@ -789,7 +789,7 @@ export default function VideoCallApp({
     setIsSendingMessage(true);
     try {
       const data = new TextEncoder().encode(
-        JSON.stringify({ type: "lk.chat", text: messageInput.trim() }),
+        JSON.stringify({ type: "lk-chat-topic", text: messageInput.trim() }),
       );
       await localParticipant.publishData(data, { reliable: true });
       setChatMessages((prev) => [
