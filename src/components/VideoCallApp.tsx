@@ -789,7 +789,7 @@ export default function VideoCallApp({
     setIsSendingMessage(true);
     try {
       const data = new TextEncoder().encode(
-        JSON.stringify({ type: "chat", text: messageInput.trim() }),
+        JSON.stringify({ type: "lk-chat-topic", text: messageInput.trim() }),
       );
       await localParticipant.publishData(data, { reliable: true });
       setChatMessages((prev) => [
